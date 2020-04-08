@@ -1,6 +1,59 @@
 /* hero top section */
 
-.hero-container {
+/* .hero-container {
     background: linear-gradient(49deg, rgba(83,78,172,1) 0%, rgba(83,78,172,1) 1%, rgba(168,73,171,1) 81%, rgba(168,73,171,1) 100%);
     height: 600px;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.top-container {
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    /* height: 600px; */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.nav-icon {
+    font-family: 'Lobster', sans-serif;
+    font-size: 1.6rem;
+    margin: 20px;
+}
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-button {
+    margin: 20px;
+    width: 150px;
+}
+
+.hero-container {
+    display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+}
+
+.hero-title {
+		font-size: 88px;
+		margin: 80px 30px;
+}
+
+.hero-subtitle {
+		font-size: 55px;
+		margin: 15px;
+}
+
+.calendar-svg {
+	width: 150px;
+	height: 150px;
 }
