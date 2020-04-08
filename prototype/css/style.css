@@ -10,9 +10,9 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
-.hero-container {
+.top-container {
     background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
-    height: 600px;
+    /* height: 600px; */
 }
 
 .nav-container {
@@ -34,4 +34,26 @@ body {
 .nav-button {
     margin: 20px;
     width: 150px;
+}
+
+.hero-container {
+    display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+}
+
+.hero-title {
+		font-size: 88px;
+		margin: 80px 30px;
+}
+
+.hero-subtitle {
+		font-size: 55px;
+		margin: 15px;
+}
+
+.calendar-svg {
+	width: 150px;
+	height: 150px;
 }
