@@ -4,6 +4,4 @@ cd .. && ^
 cd react && ^
 npm run build && ^
 cd .. && ^
-jekyll build && ^
-
-jekyll serve
+bundle exec jekyll serve

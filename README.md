@@ -20,9 +20,14 @@ WhosFree App Front end code
 gem install bundler jekyll
 ```
 
-2. Run npm install after install Node.js
+2. Run npm install after install Node.js for both code and react projects
 
 ```bash
+cd code
+npm ci
+cd ..
+
+cd react
 npm ci
 ```
 
@@ -43,10 +48,6 @@ index.html # entrypoint, using default template
 ```
 
 ## (4) Build
-
-```bash
-.\build.bat
-```
 
 There are 3 steps to build the Jekyll site.
 

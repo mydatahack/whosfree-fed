@@ -48,6 +48,8 @@ exclude:
   - code/
   - react/
   - README.md
+  - deploy.bat
+  - deploy.sh
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
