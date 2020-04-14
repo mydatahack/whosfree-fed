@@ -5,30 +5,71 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>WhosFree | Home</title>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<!-- <link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff"> -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/animation.css">
 </head>
 
 <body>
 	<section class="top-container">
 		<nav class="nav-container">
-			<div class="nav-icon">WhosFree</div>
+			<div class="nav-icon text-white">WhosFree</div>
 			<div class="nav-right">
-				<button type="button" class="btn btn-primary nav-button">Sign In</button>
-				<button type="button" class="btn btn-danger nav-button">Sign Up</button>
+				<div class="btn-nav-sigin-container">
+					<button type="button" class="btn btn-nav-signin">Sign In</button>
+				</div>
+				<div class="nav-burger-container">
+					<div class="nav-burger"></div>
+				</div>
 			</div>
 		</nav>
 		<main>
-			<div class="container">
-				<div class="hero-container">
-					<img src="img/calendar-example-1.svg" class="calendar-svg" />
-					<h1 class="hero-title">Who's Free?</h1>
-					<h4 class="hero-subtitle">Connet you</h4>
-					<h4 class="hero-subtitle">With your friends</h4>
+			<div class="container hero-container">
+				<div class="row align-items-center justify-content-center">
+					<div class="col d-flex justify-content-center flex-column">
+						<div class="hero-left-container-badge">
+
+							<h1 class="hero-title text-white">Who's Free?</h1>
+							<div class="d-flex justify-content-between">
+								<img src="img/calendar-icon-hero.svg" class="hero-icon" />
+								<img src="img/connected-icon-hero.svg" class="hero-icon" />
+								<img src="img/hangout-icon-hero.svg" class="hero-icon" />
+							</div>
+						</div>
+						<div class="hero-right-container">
+							<!-- <img src="img/connected-icon-hero.svg" class="connected-icon-hero" /> -->
+							<h2 class="hero-subtitle text-white">Connecting you to your friends</h2>
+							<h2 class="hero-subtitle text-white">Find out who is free and hang out</h2>
+						</div>
+						<div class="hero-btn-container">
+							<button type="button" class="btn btn-hero-signup">Start Connecting Now!</button>
+						</div>
+					</div>
 				</div>
 			</div>
+
 		</main>
 	</section>
+	<script src="./js/animation-control.js"></script>
+	<script src="./js/initEventHandler.js"></script>
 </body>
 
 </html>
