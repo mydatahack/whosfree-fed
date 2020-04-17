@@ -15,6 +15,7 @@
 body {
   font-family: 'Lato', sans-serif;
 }
+
 .top-container {
   background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
   /* height: 600px; */
@@ -31,7 +32,9 @@ body {
   font-family: 'Pacifico', sans-serif;
   font-size: 1.6rem;
   margin: 20px;
+  z-index: 100;
 }
+
 .nav-right {
   display: flex;
   justify-content: flex-end;
@@ -67,7 +70,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  z-index: 20;
 }
 
 .nav-burger {
@@ -93,6 +96,76 @@ body {
   top: 8px;
   left: -1px;
 }
+
+.nav-flyout {
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #222;
+  color: white;
+}
+
+.nav-flyout.active {
+  width: 250px;
+  transition: width 0.3 cubic-bezier(0.52, 0.14, 0.42, 0.89);
+}
+
+.menu-container {
+  margin-top: 140px;
+  margin-left: 50px;
+
+}
+.menu-container > ul {
+  font-size: 20px;
+  list-style: none;
+}
+
+.nav-link,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:active {
+  color: white;
+  padding: 0px;
+}
+
+.menu-container > ul > li {
+  margin-top: 30px;
+}
+
+.nav-item {
+  position: relative;
+}
+/* 
+.nav-item:after {
+  content: '';
+  position: absolute;
+  border-top: solid 1px white;
+  width: 0%;
+  top: 28px;
+  left: 0;
+  transition: all 0.2 cubic-bezier(0.52, 0.14, 0.42, 0.89);
+} */
+
+.nav-item:hover:after {
+  content: '';
+  position: absolute;
+  border-top: solid 1px white;
+  width: 100%;
+  top: 28px;
+  left: 0;
+  animation: grow-right;
+  animation-duration: 0.15s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.52, 0.14, 0.42, 0.89);
+}
+
+@keyframes grow-right {
+  0% { transform: scaleX(0); transform-origin: center}
+  100% { transform: scaleX(1);}
+}
+
 
 /* hero */
 .hero-container {
@@ -159,6 +232,5 @@ body {
 .btn-hero-signup:focus {
   background-color: #5e86e5;
   border-color: #5e86e5;
-
 }
 
