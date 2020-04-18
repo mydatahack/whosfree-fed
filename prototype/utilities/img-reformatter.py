@@ -8,11 +8,11 @@ input_path_square_image = [
   './original/schedule-girl-3.PNG',
   './original/schedule-girl-4.PNG'
 ]
-target_width_list_square = [150, 300, 400, 600]
+target_width_list_square = [150, 200, 300, 400, 600]
 
 # For rect images
 input_path_rect_image = ['./original/hangout-girls.PNG']
-target_width_list_rect = [150, 300, 400, 600]
+target_width_list_rect = [150, 200, 300, 400, 600]
 
 def resize_image_by_width(original_img_path, width, reformatted_img_path):
   '''

@@ -8,22 +8,35 @@
 /* #fd8469 */
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&&family=Fredoka+One&family=Lato&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .color {
   color: #fd8469, #ffd15c, #2c9984
 }
 
 body {
   font-family: 'Lato', sans-serif;
+
 }
 
+a.no-decoration {
+  text-decoration: none;
+}
 .top-container {
-  padding-top: 50px;
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
-  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
   /* height: 600px; */
+}
+
+.hero {
+  padding-top: 120px;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
 }
 
 /* nav */
@@ -268,7 +281,7 @@ min-width -> if width is greater than or equal to ...px
 }
 
 .hero-container {
-  margin-top: 70px;
+  margin-top: 10px;
   padding-bottom: 40px;
   font-family: 'Fredoka One', cursive;
 }
@@ -315,6 +328,7 @@ min-width -> if width is greater than or equal to ...px
 /* Large screen */
 @media only screen and (min-width: 992px) {
   .hero-container {
+    margin-top: 70px;
     padding-bottom: 100px;
   }
 

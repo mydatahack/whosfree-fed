@@ -27,13 +27,15 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/animation.css">
 	<link rel="stylesheet" href="css/bg-dark.css">
+	<link rel="stylesheet" href="css/front-page-style.css">
+	<link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
 	<div class="bg-dark"></div>
-
+	<!-- header for navigation -->
 	<nav class="nav-container">
-		<div class="nav-icon text-white">WhosFree</div>
+		<div class="nav-icon"><a href="index.html" class="text-white no-decoration">WhosFree</a></div>
 		<div class="nav-right">
 			<div class="btn-nav-sigin-container">
 				<button type="button" class="btn btn-nav-signin">Sign In</button>
@@ -44,8 +46,13 @@
 		</div>
 		<div class="nav-flyout">
 			<div class="menu-container">
-				<p class="menu-title"><span >Menu</span></p>
+				<p class="menu-title"><span>Menu</span></p>
 				<ul>
+					<li>
+						<a href="index.html" class="nav-link">
+							<span class="nav-item">Home</span>
+						</a>
+					</li>
 					<li>
 						<a href="about.html" class="nav-link">
 							<span class="nav-item">About</span>
@@ -57,9 +64,9 @@
 			</div>
 		</div>
 	</nav>
-	<section class="top-container">
-		
-		<main>
+	<!-- hero section -->
+	<main class="top-container">
+		<section class="hero">
 			<div class="container hero-container">
 				<div class="row align-items-center justify-content-center">
 					<div class="col d-flex justify-content-center flex-column">
@@ -73,7 +80,6 @@
 							</div>
 						</div>
 						<div class="hero-subtitle-container">
-							<!-- <img src="img/connected-icon-hero.svg" class="connected-icon-hero" /> -->
 							<h2 class="hero-subtitle text-white">Connecting you to your friends</h2>
 							<h2 class="hero-subtitle text-white">Find out who is free and hang out</h2>
 						</div>
@@ -81,17 +87,110 @@
 							<button type="button" class="btn btn-hero-signup">Start Connecting Now!</button>
 						</div>
 					</div>
-				</div>			
+				</div>
 			</div>
-		</main>
-	</section>
-	<div style="height: 2400px;"></div>
+		</section>
+		<section class="content-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="word-content-container">
+							<h1>Schedule your catch-up</h1>
+							<p>
+								WhosFree is an app to simplify the way for you to catch up with your friends.
+							</p>
+							<p>
+								Organising to a catch-up can be tiresome. Do you find yourself texing back and forth to
+								see if your friends are free?
+								Can we just find out who is free more easily? Yes, we can!
+							</p>
+							<p>
+								WhosFree provides you with the simplest way to connect by sharing a WhosFree calendar among a group of friends.
+							</p>
+							<p>	
+								You can instantly see who is free and let them know you want to hang out with a simple click.
+								You can also let others know when you are free to hang out so that they can easily connect to you.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6 square-img-div">
+						<div class="row padding-right-10">
+							<div class="col-6 fp-square-img-col">
+								<img class="fp-square-img" src="img/front-page-img/schedule-girl-1-width-200px.png">
+								<img class="fp-square-img" src="img/front-page-img/schedule-girl-3-width-200px.png">
+							</div>
+							<div class="col-6 fp-square-img-col">
+								<img class="fp-square-img" src="img/front-page-img/schedule-girl-4-width-200px.png">
+								<img class="fp-square-img" src="img/front-page-img/schedule-girl-2-width-200px.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 order-md-2">
+						<div class="word-content-container">
+							<h1>Get Connected</h1>
+							<p>
+								Once you sign up, you can join a friend group or invite your friends to join the group.
+								WhosFree calendar is shared among everyone in your group.
+								You and your friends can register free time slot in the calendar.
+							</p>
+							<p>
+								If you want to hang out with your friends when they are free, you can simply add your interest.
+								Your friends can do the same to your free slot.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6 order-md-1">
+						<img class="fp-rect-img" src="img/front-page-img/hangout-girls-width-600px.png">
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="dark-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<p class="footer-icon">WhosFree</p>
+					</div>
+					<div class="col-6 d-flex justify-content-end">
+						<div class="footer-menu">
+							<ul>
+								<li>
+									<a href="index.html" class="nav-link">
+										Home
+									</a>
+								</li>
+								<li>
+									<a href="about.html" class="nav-link">
+										About
+									</a>
+								</li>
+								<li><span class="text-white">Sign in</span></li>
+								<li><span class="text-white">Sign up</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<hr class="footer-divider" />
+				<p class="copyright">&copy; 2020 WhosFree</p>
+			</div>
+		</footer>
+	</main>
+	<!-- Front page content -->
+
 	<script src="./js/global-utils.js"></script>
 	<script src="./js/animation-control.js"></script>
 	<script src="./js/navbar-control.js"></script>
 	<!-- This js file has to be at the bottom -->
 	<script src="./js/initEventHandler.js"></script>
-	
+
 </body>
 
 </html>
