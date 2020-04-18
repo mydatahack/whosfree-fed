@@ -268,7 +268,7 @@ min-width -> if width is greater than or equal to ...px
 }
 
 .hero-container {
-  margin-top: 10px;
+  margin-top: 70px;
   padding-bottom: 40px;
   font-family: 'Fredoka One', cursive;
 }
@@ -315,7 +315,6 @@ min-width -> if width is greater than or equal to ...px
 /* Large screen */
 @media only screen and (min-width: 992px) {
   .hero-container {
-    margin-top: 70px;
     padding-bottom: 100px;
   }
 
@@ -346,7 +345,6 @@ min-width -> if width is greater than or equal to ...px
 
 @media only screen and (min-width: 576px) and (max-width: 991.5px) {
   .hero-container {
-    margin-top: 40px;
     padding-bottom: 90px;
   }
 
@@ -378,7 +376,6 @@ min-width -> if width is greater than or equal to ...px
 @media only screen and (min-width: 381px) and (max-width: 575.5px) { 
 
   .hero-container {
-    margin-top: 35px;
     padding-bottom: 60px;
   }
 
