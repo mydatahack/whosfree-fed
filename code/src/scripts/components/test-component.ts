@@ -4,7 +4,7 @@ export namespace custom {
   export class TestComponent implements ITestComponent {
 
     init(): void {
-      console.log('ts compilation is working....');
+      console.log('welcome to whosfree!');
     }
   }
 }

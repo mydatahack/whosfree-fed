@@ -57,7 +57,6 @@
     if (bgDark) {
       wf.global.toggleActive(bgDark);
     }
-
   }
 
 })(window.wf || (window.wf = {}));
