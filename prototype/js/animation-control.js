@@ -2,14 +2,22 @@
   
   // on the windows object, the function will be available in wf.public namespace.
   var wfNamespace = wfNamespace.public || (wfNamespace.public = {});
-  var navBurgerContainer = document.querySelector('.nav-burger-container');
+  var navBurgerContainer = document.body.querySelector('.nav-burger-container');
+  var bgDark = document.body.querySelector('.bg-dark');
 
   wfNamespace.initNavBurgerClickEvent = function () {
     navBurgerContainer.addEventListener('click', navBurgerClickEvent);
+    bgDark.addEventListener('click', navBurgerClickEvent);
   }
 
   function navBurgerClickEvent() {
-    console.log('.nav-burger-container clicked')
+    triggerNavBurgerAnimation();
+    toggleFlyoutAnimation();
+    toggleBgDark();
+  }
+
+  function triggerNavBurgerAnimation() {
+    // console.log('.nav-burger-container clicked')
     // Get the actual nav burger element
     var navBurger = navBurgerContainer.querySelector('.nav-burger');
     // Check if it contains animate class
@@ -34,6 +42,20 @@
       navBurger.classList.remove('rotate');
       navBurger.classList.add('animate-reverse');
       navBurger.classList.add('rotate-reverse');
+    }
+  }
+
+  function toggleFlyoutAnimation() {
+    var flyout = document.body.querySelector('.nav-flyout');
+    if (flyout) {
+      wf.global.toggleActive(flyout);
+    };
+  }
+
+  function toggleBgDark() {
+    var bgDark = document.body.querySelector('.bg-dark')
+    if (bgDark) {
+      wf.global.toggleActive(bgDark);
     }
   }
 
