@@ -2,7 +2,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = (env, argv) => {
   return {
@@ -13,8 +15,8 @@ module.exports = (env, argv) => {
       // register: './src/register/Index.tsx'
     },
     output: {
-      filename: '[name]-react.min.js',
-      path: path.join(__dirname, '../assets/js')
+      filename: '[name]-react.js',
+      path: path.join(__dirname, '/dist')
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js']
@@ -43,8 +45,24 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.(sass|scss)$/,
-          loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development',
+                reloadAll: true,
+              },
+            },
+            'css-loader',
+            {
+              loader: `postcss-loader`,
+              options: {
+                  options: {},
+              }
+          },
+            'sass-loader',
+          ],
         },
         {
           test: /\.[tj]sx?$/,
@@ -62,13 +80,13 @@ module.exports = (env, argv) => {
         template: './public/index.html',
         filename: 'index.html'
       }),
-      // new HtmlWebPackPlugin({
-      //   template: './public/register.html',
-      //   filename: 'register.html'
-      // }),
-      // new CopyWebpackPlugin([
-      //   { from: 'public/css', to: 'css' }
-      // ])
+      new CopyWebpackPlugin([
+        { from: '../assets/css/main.min.css', to: 'css/main.min.css' }
+      ]),
+      new MiniCssExtractPlugin({
+        filename: 'react.style.min.css', // devMode ? '[name].css' : '[name].[hash].css',
+        chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      }),
     ]
   }
 }
