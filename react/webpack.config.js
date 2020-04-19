@@ -66,9 +66,9 @@ module.exports = (env, argv) => {
       //   template: './public/register.html',
       //   filename: 'register.html'
       // }),
-      new CopyWebpackPlugin([
-        { from: 'public/css', to: 'css' }
-      ])
+      // new CopyWebpackPlugin([
+      //   { from: 'public/css', to: 'css' }
+      // ])
     ]
   }
 }

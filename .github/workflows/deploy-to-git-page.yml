@@ -12,7 +12,7 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Build
+    - name: Install
       run: |
         cd code
         npm ci
@@ -20,18 +20,18 @@ jobs:
         cd react
         npm ci
         cd ..
-        
+
+    - name: Build-Assets
+      run: |
         cd code
         npm run deploy:prod
         cd ..
         cd react
         npm run build
         cd ..
-        jekyll build
+        pwd
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: master
-        FOLDER: whosfree
+    - name: Build-Deploy-Jekyll
+      uses: helaili/jekyll-action@2.0.0
+      env:
+        JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}

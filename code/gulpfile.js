@@ -120,3 +120,13 @@ gulp.task('react-deploy', function(done) {
     .pipe(gulp.dest('../../wwwroot/js'))
   done();
 })
+
+/////////////////////////////////////////////////////////
+/////////////// Deploy main sequence job ////////////////
+/////////////////////////////////////////////////////////
+
+gulp.task('pushGp', function(done) {
+  gulp.src('../_site/**/*')
+    .pipe(gulp.dest('../../mydatahack.github.io/whosfree/'))
+  done();
+})
