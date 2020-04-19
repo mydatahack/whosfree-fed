@@ -24,13 +24,13 @@ export class FlyoutAnimationControl implements IFlyoutAnimationControl {
       const containAnimateReverse = this.navBurger.classList.contains('animate-reverse');
 
       if (!containAnimate && !containAnimateReverse) {
-        console.log('no animate or animate-reverse classes');
+        // console.log('no animate or animate-reverse classes');
         this.navBurger.classList.add('animate');
         this.navBurger.classList.add('rotate');
       }
 
       if (!containAnimate && containAnimateReverse) {
-        console.log('animate-reverse, but no animate class');
+        // console.log('animate-reverse, but no animate class');
         this.navBurger.classList.remove('animate-reverse');
         this.navBurger.classList.remove('rotate-reverse');
         this.navBurger.classList.add('animate');
@@ -38,7 +38,7 @@ export class FlyoutAnimationControl implements IFlyoutAnimationControl {
       }
 
       if ((containAnimate && !containAnimateReverse)) {
-        console.log('animate, but no animate reverse');
+        // console.log('animate, but no animate reverse');
         this.navBurger.classList.remove('animate');
         this.navBurger.classList.remove('rotate');
         this.navBurger.classList.add('animate-reverse');

@@ -21,6 +21,15 @@ jobs:
         npm ci
         cd ..
 
+    - name: Unit-Tests
+        run: |
+         cd code
+         npm run test-single-run 
+         cd ..
+         cd react
+         npm test
+         cd ..
+
     - name: Build-Assets
       run: |
         cd code
