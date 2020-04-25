@@ -20,14 +20,15 @@ const rollupNodeResolve = require('rollup-plugin-node-resolve');
 
 // File path constant values
 // (1) Source path
-const sassSrcPath = 'src/style/main.scss'
-const sassSrcWatchPath = 'src/style/**/*.scss'
+const sassSrcPath = 'src/style/main.scss';
+const sassSrcWatchPath = 'src/style/**/*.scss';
 const tsSrcInputPath = 'src/scripts/main.ts';
 // for watch
 const tsSrcPath = 'src/scripts/**/*.ts';
 
 // (2) Dist path
-const sassDistPath = '../assets/css'
+const sassDistPath = '../assets/css';
+const cssAssetPath = '../_site/assets/css';
 const tsDistPathAndFileName = '../assets/js/main.min.js';
 
 // Default task only gets executed when typed only gulp
@@ -37,75 +38,86 @@ gulp.task('default', async () => {
 
 // (3) Process SASS and deploy to asset folder
 gulp.task('deploy-css', () => {
-  return gulp.src(sassSrcPath)
+  return gulp
+    .src(sassSrcPath)
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(concat('main.min.css'))
     .pipe(gulp.dest(sassDistPath));
 });
 
+gulp.task('moveCSStoJekyllSite', function (done) {
+  gulp.src(sassDistPath + '/*.css').pipe(gulp.dest(cssAssetPath));
+  done();
+});
+
+gulp.task('deployCssFull', (callback) => {
+  runSequence('deploy-css', 'moveCSStoJekyllSite', callback);
+});
+
 // (4) Compile TypeScript and deploy to asset folder
 gulp.task('deploy-js', () => {
-  return rollup.rollup({
-    input: tsSrcInputPath,
-    plugins: [
-      rollupTypescript({
-        cacheRoot: '.rollupcache',
-        tsconfigOverride: {
-          compilerOptions: {
-            removeComments: true,
-          }
-        }
-      }),
-      rollupNodeResolve({}),
-      rollupUglify({
-        compress: {
-          drop_console: false
-        }
-      })
-    ]
-  }).then(bundle => {
-    return bundle.write({
-      file: tsDistPathAndFileName,
-      format: 'iife',
-      // extend whosfree namespace instead of replace
-      name: 'wf',
-      extend: true,
-      sourcemap: false,
-      globals: {
-        // map module 'jquery' to global 'jQuery'
-        // jquery: 'jQuery'
-      }
+  return rollup
+    .rollup({
+      input: tsSrcInputPath,
+      plugins: [
+        rollupTypescript({
+          cacheRoot: '.rollupcache',
+          tsconfigOverride: {
+            compilerOptions: {
+              removeComments: true,
+            },
+          },
+        }),
+        rollupNodeResolve({}),
+        rollupUglify({
+          compress: {
+            drop_console: false,
+          },
+        }),
+      ],
+    })
+    .then((bundle) => {
+      return bundle.write({
+        file: tsDistPathAndFileName,
+        format: 'iife',
+        // extend whosfree namespace instead of replace
+        name: 'wf',
+        extend: true,
+        sourcemap: false,
+        globals: {
+          // map module 'jquery' to global 'jQuery'
+          // jquery: 'jQuery'
+        },
+      });
     });
-  });
 });
 
 // Watch source file change and reload browser for development
 gulp.task('watch', () => {
   browserSync.init({
     server: '../_site',
-    port:8080,
-    ui: {port: 8081}
+    port: 8080,
+    ui: { port: 8081 },
   });
 
   gulp.watch(tsSrcPath, gulp.series('deploy-js'));
-  gulp.watch(sassSrcWatchPath, gulp.series('deploy-css'));
+  gulp.watch(sassSrcWatchPath, gulp.series('deployCssFull'));
 
   //reloader
   gulp.watch(tsSrcPath).on('change', browserSync.reload);
   gulp.watch(sassSrcWatchPath).on('change', browserSync.reload);
 });
 
-gulp.task('checkDist', function() {
+gulp.task('checkDist', function () {
   browserSync.init({
     server: './dist',
-    port:8080,
-    ui: {port: 8081}
+    port: 8080,
+    ui: { port: 8081 },
   });
 });
-
 
 /////////////////////////////////////////////////////////
 /////////////// Deploy main sequence job ////////////////
@@ -115,18 +127,18 @@ gulp.task('deploy', (callback) => {
   runSequence(['deploy-css', 'deploy-js'], callback);
 });
 
-gulp.task('react-deploy', function(done) {
-  gulp.src('../react/dist/*.js')
-    .pipe(gulp.dest('../../wwwroot/js'))
+gulp.task('react-deploy', function (done) {
+  gulp.src('../react/dist/*.js').pipe(gulp.dest('../../wwwroot/js'));
   done();
-})
+});
 
 /////////////////////////////////////////////////////////
 /////////////// Deploy main sequence job ////////////////
 /////////////////////////////////////////////////////////
 
-gulp.task('pushGp', function(done) {
-  gulp.src('../_site/**/*')
-    .pipe(gulp.dest('../../mydatahack.github.io/whosfree/'))
+gulp.task('pushGp', function (done) {
+  gulp
+    .src('../_site/**/*')
+    .pipe(gulp.dest('../../mydatahack.github.io/whosfree/'));
   done();
-})
+});
