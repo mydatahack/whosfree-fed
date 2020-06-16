@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&&family=Fredoka+One&family=Lato&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.main-calendar {
+ 
+}
+
+.main-calendar > caption > div {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-calendar > caption > div > span:nth-child(2) {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#calendar-prev,
+#calendar-next {
+  
+
+}
+
+#calendar-prev {
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  transform: rotate(45deg);
+}
+
+#calendar-next {
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  transform: rotate(45deg);
+}
+
+.main-calendar > thead > tr > td,
+.main-calendar > tbody > tr > td {
+  padding: 7px;
+}

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["jest", "node"],
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
@@ -14,6 +15,7 @@
       "./src/**/*"
   ],
   "exclude" : [
-      "./src/**/tests/**/*"
+      "./src/**/tests/**/*",
+      "node_modules"
   ]
 }
