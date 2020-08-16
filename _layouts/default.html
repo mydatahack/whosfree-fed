@@ -3,10 +3,13 @@
 {% include head.html %}
 
 <body>
-	{% include bg-dark.html %}
-	{% include nav.html %}
-	{{ content }}
-	{% include js-script-tag.html %}
+	<main>
+		{% include bg-dark.html %}
+		{% include nav.html %}
+		{{ content }}
+		{% include footer.html %}
+	</main>
+		{% include js-script-tag.html %}
 </body>
 
 </html>

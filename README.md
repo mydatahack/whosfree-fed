@@ -24,11 +24,11 @@ gem install bundler jekyll
 
 ```bash
 cd code
-npm ci
+npm i
 cd ..
 
 cd react
-npm ci
+npm i
 ```
 
 ## (3) Folder Structure
@@ -62,7 +62,7 @@ cd ..
 cd react
 npm run build
 cd ..
-jekyll build
+jekyll build 
 
-jekyll serve
+jekyll serve or bundle exec jekyll serve
 ```
