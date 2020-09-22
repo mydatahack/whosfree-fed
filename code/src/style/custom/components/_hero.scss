@@ -91,7 +91,6 @@ min-width -> if width is greater than or equal to ...px
   border-color: #5e86e5;
 }
 
-
 /* Large screen */
 @media only screen and (min-width: 992px) {
   .hero-container {
@@ -104,12 +103,12 @@ min-width -> if width is greater than or equal to ...px
     margin: 20px;
     white-space: nowrap;
   }
-  
+
   .hero-subtitle {
     font-size: 45px;
     margin: 15px;
   }
-  
+
   .hero-icon {
     margin: 40px;
     width: 150px;
@@ -134,12 +133,12 @@ min-width -> if width is greater than or equal to ...px
     margin: 20px;
     white-space: nowrap;
   }
-  
+
   .hero-subtitle {
     font-size: 30px;
     margin: 15px;
   }
-  
+
   .hero-icon {
     margin: 40px;
     width: 100px;
@@ -154,8 +153,7 @@ min-width -> if width is greater than or equal to ...px
   }
 }
 
-@media only screen and (min-width: 381px) and (max-width: 575.5px) { 
-
+@media only screen and (min-width: 381px) and (max-width: 575.5px) {
   .hero-container {
     padding-bottom: 60px;
   }
@@ -171,5 +169,4 @@ min-width -> if width is greater than or equal to ...px
     width: 65px;
     height: 65px;
   }
-
 }

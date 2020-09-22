@@ -40,11 +40,12 @@ jobs:
         cd ..
         pwd
 
-    - name: Build-Deploy-Jekyll
-      uses: helaili/jekyll-action@2.0.0
-      env:
-        JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
-
+    - name: Build-Jekyll
+      run: |
+        sudo apt-get install ruby-full
+        sudo gem install bundler
+        sudo bundle install
+        bundle exec jekyll build 
 
     - name: Deploy_To_GithubPage
       uses: JamesIves/github-pages-deploy-action@3.5.9
