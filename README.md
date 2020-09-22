@@ -1,6 +1,6 @@
-# whosfree-fed
+# WhosFree App Front-End
 
-WhosFree App Front end code
+WhosFree App Front end code 
 
 ## (1) Architecture Overview
 
@@ -66,3 +66,7 @@ jekyll build
 
 jekyll serve or bundle exec jekyll serve
 ```
+
+# (5) Deployment
+
+Using github action to push to git page.

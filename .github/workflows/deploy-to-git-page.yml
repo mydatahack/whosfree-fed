@@ -22,13 +22,13 @@ jobs:
         cd ..
 
     - name: Unit-Tests
-        run: |
-         cd code
-         npm run test-single-run 
-         cd ..
-         cd react
-         npm test
-         cd ..
+      run: |
+        cd code
+        npm run test-single-run 
+        cd ..
+        cd react
+        npm test
+        cd ..
 
     - name: Build-Assets
       run: |
